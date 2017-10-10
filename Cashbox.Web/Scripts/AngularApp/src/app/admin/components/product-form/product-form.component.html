@@ -1,0 +1,32 @@
+<div class="ui grid">
+  <div class="row">
+      <div class="sixteen wide column">
+          <form class="ui form" [formGroup]="productForm" (ngSubmit)="submit(productForm.value)">
+              <div class="field">
+                  <label for="title">Title</label>
+                  <input id="title" type="text" placeholder="Product title" name="title" [formControl]="productForm.controls['title']" required>
+              </div>
+
+              <div class="field">
+                  <label for="price">Price</label>
+                  <input id="price" type="text" placeholder="Product price" name="price" [formControl]="productForm.controls['price']" required>
+              </div>              
+
+              <button class="ui left floated button" type="button" (click)="back()">Back</button>
+
+              <button class="ui left floated button" type="submit" [ngClass]="{'hidden': !productForm.valid}">{{isNewItem ? 'Create' : 'Update'}} Product</button>
+              <button class="ui left floated button disabled" type="button" id="fakeSubmit" [ngClass]="{'hidden': productForm.valid}">{{isNewItem ? 'Create' : 'Update'}} Product</button>
+              <div class="ui popup transition hidden">
+                  <div class="ui bulleted list">
+                      <div class="item" *ngIf="productForm.controls['title'].hasError('required')">Title is not valid</div>
+                      <div class="item" *ngIf="productForm.controls['price'].hasError('required')">Price is not valid</div>
+                  </div>
+              </div>
+
+              <button class="ui button right floated" type="button" *ngIf="!isNewItem" (click)="delete(product.id)">Delete Product</button>
+          </form>
+      </div>
+  </div>
+</div>
+
+<app-delete-modal [options]="deleteModalOptions" *ngIf="isDeleteProduct"></app-delete-modal>

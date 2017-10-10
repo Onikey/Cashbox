@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cashbox.Web", "Cashbox.Web\Cashbox.Web.csproj", "{325A922B-A5CF-45D5-9FB2-FE844707A223}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cashbox.Data", "Cashbox.Data\Cashbox.Data.csproj", "{0B88E4F4-3CEC-4BBD-9E85-9AD7ED44B8BA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{325A922B-A5CF-45D5-9FB2-FE844707A223}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{325A922B-A5CF-45D5-9FB2-FE844707A223}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{325A922B-A5CF-45D5-9FB2-FE844707A223}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{325A922B-A5CF-45D5-9FB2-FE844707A223}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B88E4F4-3CEC-4BBD-9E85-9AD7ED44B8BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B88E4F4-3CEC-4BBD-9E85-9AD7ED44B8BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B88E4F4-3CEC-4BBD-9E85-9AD7ED44B8BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B88E4F4-3CEC-4BBD-9E85-9AD7ED44B8BA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E993B56F-83DE-423D-A9A4-4303276F62C9}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,29 @@
+<div class="ui header">
+  Cashbox
+</div>
+<button class="ui button" (click)="showCheck()" [disabled]="productsInCard.length < 1">Show check</button> 
+
+<table class="ui single line table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products" [ngClass]="{'positive': product.state === itemState.added, 'warning': product.state === itemState.modified}">
+      <td>{{product.title}}</td>
+      <td>{{product.price}}</td>
+      <td><input type="number" min="0" [(ngModel)]="product.quantity" (change)="onQuantityChange(product)"></td>
+      <td class="collapsing">
+        <div class="ui icon button" (click)="addProductToCard(product)">
+          Add to card <i class="add icon"></i>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<app-check-view-modal [options]="checkViewModalOptions" [products]="productsInCard" [remove]="removeProductFromCard" *ngIf="isShowCheckView"></app-check-view-modal>

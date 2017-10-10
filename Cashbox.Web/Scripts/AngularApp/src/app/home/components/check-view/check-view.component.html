@@ -1,0 +1,43 @@
+<div id="CheckModal" class="ui modal">
+    <div class="header">Check view</div>
+    <div class="content">
+      <table class="ui single line table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>TotalPrice</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products">
+            <td>{{product.title}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.quantity}}</td>
+            <td>{{product.quantity * product.price}}</td>
+          </tr>
+        </tbody>
+        <tfoot *ngIf="isCreated">
+          <tr>
+            <th colspan="3">Date: {{checkDate | date:'medium'}}</th>
+            <th>Total: {{checkTotalPrice}}</th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <div class="actions">
+      <div class="ui negative button">Back</div>
+      <div class="ui positive right button" *ngIf="isCreated">Save</div>
+      <div class="ui right labeled icon button" *ngIf="!isCreated" (click)="createTransaction()">Create transaction<i class="checkmark icon"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui active page dimmer" *ngIf="loading">
+    <div class="content">
+        <div class="center">
+            <div class="ui text loader">Loading...</div>
+        </div>
+    </div>
+  </div>

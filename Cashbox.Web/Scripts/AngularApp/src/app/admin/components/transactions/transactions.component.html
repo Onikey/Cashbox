@@ -1,0 +1,29 @@
+<div class="ui header">
+  Daily transactions
+</div>
+
+<table class="ui single line table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Total transactions</th>
+      <th>Total amount</th>
+      <th>Total quantity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of transactionItems">
+      <td>{{item.title}}</td>
+      <td>{{item.totalTransactions}}</td>
+      <td>{{item.totalAmount}}</td>
+      <td>{{item.totalQuantity}}</td>
+    </tr>
+  </tbody>
+  <tfoot class="full-width">
+    <tr>
+      <th colspan="4">
+        Total transactions: {{transactionCount}}
+      </th>
+    </tr>
+  </tfoot>
+</table>
